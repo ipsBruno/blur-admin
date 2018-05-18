@@ -32,7 +32,9 @@
             item.subMenu = children.length ? children : null;
           });
 
-          return menuItems.concat(staticMenuItems);
+          return menuItems.concat(staticMenuItems).sort(function(a, b) {
+              return a.order - b.order;
+            });
         };
 
         this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
